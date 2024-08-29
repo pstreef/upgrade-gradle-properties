@@ -1,9 +1,12 @@
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: io.moderne.UpgradeCommonsLang3
-description: Upgrade commons lang 3.
+name: io.moderne.UpgradeGradleDependencies
+description: Upgrade gradle dependencies.
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.apache.commons
       artifactId: commons-lang3
       newVersion: "3.16.0"
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: "org.springframework.boot"
+      newVersion: "3.3.3"
